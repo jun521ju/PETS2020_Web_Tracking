@@ -9,7 +9,7 @@ This is the Firefox Addon we used for web tracking measurement on both mobile an
 * Set 'xpinstall.signatures.required' to 'false' in the about:config page of Firefox browser
 
 ## To run
-* Simply load or drag the 'WTPatrol.xpi' to a Firefox browser, it will automatically run if you've configured the above environment
+* Simply load or drag the 'WTPatrol.xpi' to the configured Firefox browser, it will automatically run if you've configured the above environment
 
 ## To develop
 * Following the following official tutorials to set up the development environment:
