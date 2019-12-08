@@ -1,0 +1,6 @@
+mobile device configuration:
+	Firefox 53 
+	copy default profile to mobile (contains prefs.js, user.js, and a util extension)
+	mkdir urls respBody in /mnt/sdcard
+	set Firefox 53 xpinstall to false in about:config
+	adb logcat | grep console: check logs 

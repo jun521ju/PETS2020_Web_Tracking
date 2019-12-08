@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS url(
+    id INTEGER PRIMARY KEY ASC,
+    url TEXT
+);

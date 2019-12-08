@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS http_requests(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  crawl_id INTEGER,
+  visit_id INTEGER,
+  url TEXT,
+  top_level_url TEXT,
+  method TEXT,
+  referrer TEXT,
+  headers TEXT,
+  is_XHR BOOLEAN,
+  is_frame_load BOOLEAN,
+  is_full_page BOOLEAN,
+  is_third_party_channel BOOLEAN,
+  is_third_party_window BOOLEAN,
+  triggering_origin TEXT,
+  loading_origin TEXT,
+  loading_href TEXT,
+  req_call_stack TEXT,
+  content_policy_type INTEGER,
+  post_body TEXT,
+  time_stamp TEXT
+);

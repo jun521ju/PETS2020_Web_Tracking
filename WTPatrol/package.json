@@ -1,0 +1,16 @@
+{
+  "title": "WTPatrol",
+  "name": "WTPatrol",
+  "version": "0.1.0",
+  "description": "A Firefox Addon for web tracking measurement on both mobile and desktop environments.",
+  "main": "index.js",
+  "author": "Zhiju Yang",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ]
+}
