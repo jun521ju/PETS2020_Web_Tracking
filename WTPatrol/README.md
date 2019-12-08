@@ -2,10 +2,10 @@
 This is the Firefox Addon we used for web tracking measurement on both mobile and desktop environments. 
 
 ## Environment Configuration (for both running and developing this addon)
-* Install Firefox 53 (64-bit for Ubuntu) and/or Firefox for Android 53
+* Install Firefox 53 (64-bit for Ubuntu) to your Ubuntu, or Firefox for Android 53 to your Android
 * Create the following folders and files (make sure to grant appropriate permissions):
   * '/mnt/sdcard/': the working folder of this addon
-  * '/mnt/sdcard/urls/urllist': the file contains urls to crawl
+  * '/mnt/sdcard/urls/urllist': the file contains urls that you would like to crawl
 * Set 'xpinstall.signatures.required' to 'false' in the about:config page of Firefox browser
 
 ## To run
@@ -15,6 +15,7 @@ This is the Firefox Addon we used for web tracking measurement on both mobile an
 * Following the following official tutorials to set up the development environment:
 https://developer.mozilla.org/en-US/docs/Archive/Add-ons/Add-on_SDK
 * Clone this repo and play with the source code
+* run ``jpm run`` to build and test your addon
 
 # File explanation
 * 'data/content.js' : the content script that will be injected to each webpage.
