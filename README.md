@@ -8,4 +8,4 @@ This folder contains the lists of trackers identified in our study. Please check
 This folder contains the source code of the WTPatrol addon used in our study. Please check the README.md in this folder for more information.
 
 ## dataset_link.txt
-This file contains a Google Drive link that shares our dataset.
+This file contains a Google Drive link that shares a database file of our measurement results.
