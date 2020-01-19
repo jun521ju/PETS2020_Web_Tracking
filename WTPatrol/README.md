@@ -2,23 +2,20 @@
 This is the Firefox Addon we used for web tracking measurement on both mobile and desktop environments. 
 
 ## Environment Configuration (for both running and developing this addon)
-### Part A. Configuration on the desktop Environment(Ubuntu 18.04)
+### Part A. Configuration on the desktop Environment(tested on Ubuntu 18.04)
 * 1. Download Firefox 53 from Google Drive (the Firefox used in our study):  
  ``https://drive.google.com/open?id=1zdoYYBZZGZpL1EO7tLr824wztOv7rRat``
 * 2. Extract the tar package  
  ``tar -xJf firefox53.0.3.tar.xz``
-* 3. Delete Firefox updater so that it will not keep asking you to update  
- ``sudo rm -rf firefox/update*``
-* 4. Move the Firefox folder to /opt  
- ``sudo mv firefox /opt/firefox53``
-* 5. Create Symbolic link for New Firefox as default  
- ``sudo mv /usr/bin/firefox  /usr/bin/firefoxold``
- ``sudo ln -s /opt/firefox53/firefox /usr/bin/firefox``
-* 6. Now you should have Firefox 53 installed on your Ubuntu 18.04, open Firefox from Terminal with command ``firefox``
-* 7. In Firefox, go to ``about:config`` and set ``xpinstall.signatures.required`` to ``false`` 
-* 8. Create following folders and files in Terminal  
+* 3. Move the Firefox folder to /opt  
+ ``sudo mv firefox53.0.3 /opt/firefox53``
+* 4. Create Symbolic link for New Firefox as default  
+ ``sudo mv /usr/bin/firefox  /usr/bin/firefoxold && sudo ln -s /opt/firefox53/firefox /usr/bin/firefox``
+* 5. Create following folders and files in Terminal  
  ``sudo mkdir /mnt/sdcard/ && sudo mkdir /mnt/sdcard/urls/``  
  ``sudo chmod -R 777 /mnt && sudo echo -e 'google.com\nfacebook.com' > /mnt/sdcard/urls/urllist``
+* 6. Now you should have the correct envrionment configured on your Ubuntu 18.04, open Firefox from Terminal with command ``firefox`` 
+* 7. Drag the ``WTPatrol.xpi`` into Firefox, it will be automatically installed and will run after restarting your Firefox as prompted.
  
 ### Part B. Configuration on the mobile Environment(Android 8)
 , or Firefox for Android 53 to your Android
@@ -27,8 +24,18 @@ This is the Firefox Addon we used for web tracking measurement on both mobile an
   * '/mnt/sdcard/urls/urllist': the file contains urls that you would like to crawl
 * Set 'xpinstall.signatures.required' to 'false' in the about:config page of Firefox browser
 
-## To run
-* Simply load or drag the 'WTPatrol.xpi' to the configured Firefox browser, it will automatically run if you've configured the above environment
+## Input and Output format  
+### Input
+On the first run, WTPatrol will read the input URLs from ``/mnt/sdcard/urls/urllist`` and save them to the ``url`` table of ``data.sqlite`` (automatically created in the folder ``/mnt/sdcard/`` when running WTPatrol). The URL format in ``/mnt/sdcard/urls/urllist`` should not contain http or https scheme at the beginning of a URL by default. However, it is easy to take as the input a URL with http or https scheme by modifying Line 135 and 153 of ``index.js``.  
+### Output
+WTPatrol has three outputs: (1) the ``/mnt/sdcard/pageSrc/`` folder, in which saves the webpage source of each visited website; (2) the ``/mnt/sdcard/respBody/`` folder, in which saves the HTTP response body of each visited website; and (3) the ``/mnt/sdcard/data.sqlite`` sqlite database file.  
+There are 6 tables in ``data.sqlite`` that are used in our study:  
+* 'url' : the URL list read from ``/mnt/sdcard/urls/urllist``. WTPatrol keeps deleting the record in this table on each visit.
+* 'pages' : all the visited URLs. WTPatrol moves the records from table url to this table per each visit. 
+* 'javascript_cookies' : contains all the cookies processed using JavaScript on each visited webpage
+* 'javascript' : contains all the JavaScript API calls on each visited webpage
+* 'http_requests' : contains all the HTTP request of each visit
+* 'http_responses' : contains all the HTTP response of each visit
 
 ## To develop
 * Following the following official tutorials to set up the development environment:
