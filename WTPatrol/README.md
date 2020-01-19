@@ -27,6 +27,7 @@ This is the Firefox Addon we used for web tracking measurement on both mobile an
 ## Input and Output format  
 ### Input
 On the first run, WTPatrol will read the input URLs from ``/mnt/sdcard/urls/urllist`` and save them to the ``url`` table of ``data.sqlite`` (automatically created in the folder ``/mnt/sdcard/`` when running WTPatrol). The URL format in ``/mnt/sdcard/urls/urllist`` should not contain http or https scheme at the beginning of a URL by default. However, it is easy to take as the input a URL with http or https scheme by modifying Line 135 and 153 of ``index.js``.  
+Note that WTPatrol only read URLs from ``/mnt/sdcard/urls/urllist`` on the first run. On the latter runs, it will visied each url saved in the ``url`` table. It will stop and close the browser if the ``url`` table is empty.  
 ### Output
 WTPatrol has three outputs: (1) the ``/mnt/sdcard/pageSrc/`` folder, in which saves the webpage source of each visited website; (2) the ``/mnt/sdcard/respBody/`` folder, in which saves the HTTP response body of each visited website; and (3) the ``/mnt/sdcard/data.sqlite`` sqlite database file.  
 There are 6 tables in ``data.sqlite`` that are used in our study:  
