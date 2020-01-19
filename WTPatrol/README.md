@@ -20,12 +20,12 @@ This is the Firefox Addon we used for web tracking measurement on both mobile an
 ### Part B. Configuration on the mobile Environment
 * 1. Download and install Firefox for Android 53 from our Google Drive:  
  ``https://drive.google.com/open?id=197VeXUxsrfD-p9D_bRn1X4OMgRWfERmk``
-* 2. Once installed, manulaly grant the file access permission in Android app setting
-* 3. Open Firefox and set ``xpinstall.signatures.required`` to ``false`` in the about:config page 
-* 4. Create following folders and files via [ADB](https://developer.android.com/studio/command-line/adb)
+* 2. Open Firefox and set ``xpinstall.signatures.required`` to ``false`` in the about:config page 
+* 3. Create following folders and files via [ADB](https://developer.android.com/studio/command-line/adb)
  ``adb shell mkdir /mnt/sdcard/urls/ && adb shell echo -e 'google.com\nfacebook.com' > /mnt/sdcard/urls/urllist``
-* 5. Push WTPatrol.xpi to Android device via ADB
+* 4. Push WTPatrol.xpi to Android device via ADB
  `` adb push path/to/WTPatrol.xpi /sdcard``
+* 5. Grant the file access permission in Android app setting so that the next step will be allowed
 * 6. In Firefox browser, navigate to ``file:///sdcard`` and click ``WTPatrol.xpi`` to install WTPatrol.
 * 7. After installation, WTPatrol should automatically run.  
 
