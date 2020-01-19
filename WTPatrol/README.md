@@ -17,8 +17,8 @@ This is the Firefox Addon we used for web tracking measurement on both mobile an
 * 6. Now you should have the correct envrionment configured on your Ubuntu 18.04, open Firefox from Terminal with command ``firefox`` 
 * 7. Drag the ``WTPatrol.xpi`` into Firefox, it will be automatically installed and will run after restarting your Firefox as prompted.
  
-### Part B. Configuration on the mobile Environment(Android 8)
-* 1. Download and install Firefox for Android 53 from our Google Drive (the Firefox used in our study):  
+### Part B. Configuration on the mobile Environment
+* 1. Download and install Firefox for Android 53 from our Google Drive:  
  ``https://drive.google.com/open?id=197VeXUxsrfD-p9D_bRn1X4OMgRWfERmk``
 * 2. Once installed, manulaly grant the file access permission in Android app setting
 * 3. Open Firefox and set ``xpinstall.signatures.required`` to ``false`` in the about:config page 
