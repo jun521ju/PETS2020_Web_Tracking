@@ -51,7 +51,7 @@ https://developer.mozilla.org/en-US/docs/Archive/Add-ons/Add-on_SDK
 * Clone this repo and play with the source code
 * run ``jpm run`` to build and test your addon
 
-## File explanation
+## WTPatrol source file explanation
 * 'data/content.js' : the content script that will be injected to each webpage.
 * 'data/create_*.sql' : SQL statements for creating different tables in the sqlite database
 * 'lib/content-policy-instrument.js' : background script for content policy instrumentation
