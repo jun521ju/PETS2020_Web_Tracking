@@ -3,7 +3,7 @@ This is the Firefox Addon we used for web tracking measurement on both mobile an
 
 ## Environment Configuration (for both running and developing this addon)
 ### Part A. Configuration on the desktop Environment(tested on Ubuntu 18.04)
-* 1. Download Firefox 53 from Google Drive (the Firefox used in our study):  
+* 1. Download Firefox 53 from our Google Drive (the Firefox used in our study):  
  ``https://drive.google.com/open?id=1zdoYYBZZGZpL1EO7tLr824wztOv7rRat``
 * 2. Extract the tar package  
  ``tar -xJf firefox53.0.3.tar.xz``
@@ -18,11 +18,18 @@ This is the Firefox Addon we used for web tracking measurement on both mobile an
 * 7. Drag the ``WTPatrol.xpi`` into Firefox, it will be automatically installed and will run after restarting your Firefox as prompted.
  
 ### Part B. Configuration on the mobile Environment(Android 8)
-, or Firefox for Android 53 to your Android
-* Create the following folders and files (make sure to grant appropriate permissions):
-  * '/mnt/sdcard/': the working folder of this addon
-  * '/mnt/sdcard/urls/urllist': the file contains urls that you would like to crawl
-* Set 'xpinstall.signatures.required' to 'false' in the about:config page of Firefox browser
+* 1. Download and install Firefox for Android 53 from our Google Drive (the Firefox used in our study):  
+ ``https://drive.google.com/open?id=197VeXUxsrfD-p9D_bRn1X4OMgRWfERmk``
+* 2. Once installed, manulaly grant the file access permission in Android app setting
+* 3. Open Firefox and set ``xpinstall.signatures.required`` to ``false`` in the about:config page 
+* 4. Create following folders and files via [ADB](https://developer.android.com/studio/command-line/adb)
+ ``adb shell mkdir /mnt/sdcard/urls/ && adb shell echo -e 'google.com\nfacebook.com' > /mnt/sdcard/urls/urllist``
+* 5. Push WTPatrol.xpi to Android device via ADB
+ `` adb push path/to/WTPatrol.xpi /sdcard``
+* 6. In Firefox browser, navigate to ``file:///sdcard`` and click ``WTPatrol.xpi`` to install WTPatrol.
+* 7. After installation, WTPatrol should automatically run.  
+
+Note that configuration on the mobile environment is quite similar to that on the desktop environment. The big difference here is that we use ADB instead of Terminal to communicate with our mobile device.
 
 ## Input and Output format  
 ### Input
