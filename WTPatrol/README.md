@@ -12,12 +12,12 @@ This is the Firefox Addon we used for web tracking measurement on both mobile an
  ``sudo mv firefox53.0.3 /opt/firefox53``
     * b. [Optional] Create Symbolic link for New Firefox as default  
  ``sudo mv /usr/bin/firefox  /usr/bin/firefoxold && sudo ln -s /opt/firefox53/firefox /usr/bin/firefox``
-* 5. Create following folders and files in Terminal  
+* 4. Create following folders and files in Terminal  
  ``sudo mkdir /mnt/sdcard/ && sudo mkdir /mnt/sdcard/urls/``  
  ``sudo chmod -R 777 /mnt && sudo echo -e 'google.com\nfacebook.com' > /mnt/sdcard/urls/urllist``
-* 6. Now you should have the correct envrionment configured on your Ubuntu 18.04, open Firefox from Terminal with command ``firefox`` (If you didn't overwrite your existing Firefox installation, you should run the command with the path, such as ``/PATH_TO_FIREFOX53.0.3/firefox``, to start Firefox 53.0.3).  
-* 7. Set ``xpinstall.signatures.required`` to ``false`` in the about:config page of Firefox 
-* 8. Drag the ``WTPatrol.xpi`` into Firefox, it will be automatically installed and will run after restarting your Firefox as prompted.
+* 5. Now you should have the correct envrionment configured on your Ubuntu 18.04, open Firefox from Terminal with command ``firefox`` (If you didn't overwrite your existing Firefox installation, you should run the command with the path, such as ``/PATH_TO_FIREFOX53.0.3/firefox``, to start Firefox 53.0.3).  
+* 6. Set ``xpinstall.signatures.required`` to ``false`` in the about:config page of Firefox 
+* 7. Drag the ``WTPatrol.xpi`` into Firefox, it will be automatically installed and will run after restarting your Firefox as prompted.
  
 ### Part B. Configuration on the mobile Environment
 * 1. Download and install Firefox for Android 53 from our Google Drive:  
