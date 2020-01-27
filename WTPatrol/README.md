@@ -14,15 +14,18 @@ This is the Firefox Addon we used for web tracking measurement on both mobile an
 * 5. Create following folders and files in Terminal  
  ``sudo mkdir /mnt/sdcard/ && sudo mkdir /mnt/sdcard/urls/``  
  ``sudo chmod -R 777 /mnt && sudo echo -e 'google.com\nfacebook.com' > /mnt/sdcard/urls/urllist``
-* 6. Now you should have the correct envrionment configured on your Ubuntu 18.04, open Firefox from Terminal with command ``firefox`` 
+* 6. Now you should have the correct envrionment configured on your Ubuntu 18.04, open Firefox from Terminal with command ``firefox`` and set ``xpinstall.signatures.required`` to ``false`` in the about:config page  
 * 7. Drag the ``WTPatrol.xpi`` into Firefox, it will be automatically installed and will run after restarting your Firefox as prompted.
  
 ### Part B. Configuration on the mobile Environment
 * 1. Download and install Firefox for Android 53 from our Google Drive:  
- ``https://drive.google.com/open?id=197VeXUxsrfD-p9D_bRn1X4OMgRWfERmk``
+ ``https://drive.google.com/open?id=197VeXUxsrfD-p9D_bRn1X4OMgRWfERmk``  
+ If you download it directly to your mobile device, you can manually install it by 
+ If you download it to your desktop device, you can install it via [ADB](https://developer.android.com/studio/command-line/adb)  
+ ``adb install <path_to_your_APK>``. 
 * 2. Open Firefox and set ``xpinstall.signatures.required`` to ``false`` in the about:config page 
-* 3. Create following folders and files via [ADB](https://developer.android.com/studio/command-line/adb)  
- ``adb shell mkdir /mnt/sdcard/urls/ && adb shell echo -e 'google.com\nfacebook.com' > /mnt/sdcard/urls/urllist``
+* 3. Create following folders and files via ADB  
+ ``adb shell mkdir /mnt/sdcard/urls/ && adb shell "echo -e 'google.com\nfacebook.com' > /mnt/sdcard/urls/urllist"``
 * 4. Push WTPatrol.xpi to Android device via ADB  
  `` adb push path/to/WTPatrol.xpi /sdcard``
 * 5. Grant the file access permission in Android app setting so that the next step will be allowed
