@@ -5,5 +5,5 @@ The ``desktop.json`` and ``mobile.json`` are two JSON files containing the JS-tr
 * __tracker__: a string of a tracker domain
 * __type__: a string of a tracker type.  There are three types: "Shared", "Desktop Specific", and "Mobile Specific". 
 
-The ``3107_matched_tracker`` contains a list of 3,107 matched JS-trackers that appeared on the matched (same)
+The ``3107_matched_tracker`` file contains a list of 3,107 matched JS-trackers that appeared on the matched (same)
 desktop and mobile first-party websites.  
