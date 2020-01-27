@@ -7,10 +7,10 @@ This is the Firefox Addon we used for web tracking measurement on both mobile an
  ``https://drive.google.com/open?id=1zdoYYBZZGZpL1EO7tLr824wztOv7rRat``
 * 2. Extract the tar package  
  ``tar -xJf firefox53.0.3.tar.xz``  
- The following two steps are optional. If you don't want to overwrite your current Firefox installation, you can directly move to setp 5.    
-* 3. [Optional] Move the Firefox folder to ``/opt``  
+* 3. The following two steps are optional. If you don't want to overwrite your current Firefox installation, you should skip this step.    
+    * a. [Optional] Move the Firefox folder to ``/opt``  
  ``sudo mv firefox53.0.3 /opt/firefox53``
-* 4. [Optional] Create Symbolic link for New Firefox as default  
+    * b. [Optional] Create Symbolic link for New Firefox as default  
  ``sudo mv /usr/bin/firefox  /usr/bin/firefoxold && sudo ln -s /opt/firefox53/firefox /usr/bin/firefox``
 * 5. Create following folders and files in Terminal  
  ``sudo mkdir /mnt/sdcard/ && sudo mkdir /mnt/sdcard/urls/``  
