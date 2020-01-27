@@ -9,4 +9,4 @@ This folder contains the source code of the WTPatrol addon used in our study. Pl
 
 ## dataset_link.txt
 This file contains a Zenodo link that shares a database file of our measurement results.
-The database documentation can be found in the PDF uploaded to Zenodo.
+The database documentation can be found in the PDF uploaded to Zenodo via the same link.
