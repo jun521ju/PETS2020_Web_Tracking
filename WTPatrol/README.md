@@ -6,23 +6,26 @@ This is the Firefox Addon we used for web tracking measurement on both mobile an
 * 1. Download Firefox 53 from our Google Drive (the Firefox used in our study):  
  ``https://drive.google.com/open?id=1zdoYYBZZGZpL1EO7tLr824wztOv7rRat``
 * 2. Extract the tar package  
- ``tar -xJf firefox53.0.3.tar.xz``
-* 3. Move the Firefox folder to /opt  
+ ``tar -xJf firefox53.0.3.tar.xz``  
+ The following two steps are optional. If you don't want to overwrite your current Firefox installation, you can directly move to setp 5.    
+* 3. [Optional] Move the Firefox folder to ``/opt``  
  ``sudo mv firefox53.0.3 /opt/firefox53``
-* 4. Create Symbolic link for New Firefox as default  
+* 4. [Optional] Create Symbolic link for New Firefox as default  
  ``sudo mv /usr/bin/firefox  /usr/bin/firefoxold && sudo ln -s /opt/firefox53/firefox /usr/bin/firefox``
 * 5. Create following folders and files in Terminal  
  ``sudo mkdir /mnt/sdcard/ && sudo mkdir /mnt/sdcard/urls/``  
  ``sudo chmod -R 777 /mnt && sudo echo -e 'google.com\nfacebook.com' > /mnt/sdcard/urls/urllist``
-* 6. Now you should have the correct envrionment configured on your Ubuntu 18.04, open Firefox from Terminal with command ``firefox`` and set ``xpinstall.signatures.required`` to ``false`` in the about:config page  
-* 7. Drag the ``WTPatrol.xpi`` into Firefox, it will be automatically installed and will run after restarting your Firefox as prompted.
+* 6. Now you should have the correct envrionment configured on your Ubuntu 18.04, open Firefox from Terminal with command ``firefox`` (If you didn't overwrite your existing Firefox installation, you should run the command with the path, such as ``/PATH_TO_FIREFOX53.0.3/firefox``, to start Firefox 53.0.3).  
+* 7. Set ``xpinstall.signatures.required`` to ``false`` in the about:config page of Firefox 
+* 8. Drag the ``WTPatrol.xpi`` into Firefox, it will be automatically installed and will run after restarting your Firefox as prompted.
  
 ### Part B. Configuration on the mobile Environment
 * 1. Download and install Firefox for Android 53 from our Google Drive:  
  ``https://drive.google.com/open?id=197VeXUxsrfD-p9D_bRn1X4OMgRWfERmk``  
- If you download it directly to your mobile device, you can manually install it by 
- If you download it to your desktop device, you can install it via [ADB](https://developer.android.com/studio/command-line/adb)  
- ``adb install <path_to_your_APK>``. 
+ If you download it directly to your mobile device, you can manually install it as usual.  
+ If you download it to your desktop device, you can install it via [ADB](https://developer.android.com/studio/command-line/adb):    
+ ``adb install <path_to_your_APK>``.  
+ Note that depending on the specific Android version you are using, you might need to set your device to allow installation from "Unknown Source" in Android Settings.
 * 2. Open Firefox and set ``xpinstall.signatures.required`` to ``false`` in the about:config page 
 * 3. Create following folders and files via ADB  
  ``adb shell mkdir /mnt/sdcard/urls/ && adb shell "echo -e 'google.com\nfacebook.com' > /mnt/sdcard/urls/urllist"``
