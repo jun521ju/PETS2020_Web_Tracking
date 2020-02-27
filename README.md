@@ -1,5 +1,5 @@
 # PETS2020_Web_Tracking
-This repo contains the artifacts and outcomes (including Firefox Addon, dataset, and tracker lists) of the research work of "A Comparative Measurement Study of Web Tracking on Mobile and Desktop Environments". Below details the content of this repo.
+This repo contains the artifacts and outcomes (including Firefox Addon, dataset, and tracker lists) of the research work of "A Comparative Measurement Study of Web Tracking on Mobile and Desktop Environments". Below details the content of this repo.  
 The paper can be accessed [here](https://petsymposium.org/2020/files/papers/issue2/popets-2020-0016.pdf).
 
 ## Tracker_List
